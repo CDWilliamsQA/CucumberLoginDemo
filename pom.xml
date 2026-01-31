@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.example</groupId>
+  <artifactId>CucumberLoginDemo</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <properties>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <!-- Cucumber core + JUnit integration -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>7.15.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit</artifactId>
+      <version>7.15.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- JUnit 4.x runner -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Maven Surefire Plugin: runs JUnit and Cucumber tests -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+          <includes>
+            <include>**/TestRunner.java</include>
+          </includes>
+          <useFile>false</useFile>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+
+      <!-- Masterthought Cucumber Reporting Plugin -->
+      <plugin>
+        <groupId>net.masterthought</groupId>
+        <artifactId>maven-cucumber-reporting</artifactId>
+        <version>5.8.1</version>
+        <executions>
+          <execution>
+            <id>generate-cucumber-reports</id>
+            <phase>post-integration-test</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <!-- Absolute path to the JSON file -->
+              <jsonFiles>
+                <param>C:/EclipseWorkspace/CucumberLoginDemo/target/cucumber-reports/cucumber.json</param>
+              </jsonFiles>
+
+              <!-- Absolute output path for advanced HTML reports -->
+              <reportOutputDirectory>C:/EclipseWorkspace/CucumberLoginDemo/target/advanced-reports</reportOutputDirectory>
+              <projectName>Cucumber Login Demo</projectName>
+
+              <checkBuildResult>false</checkBuildResult>
+
+              <!-- Environment metadata -->
+              <classifications>
+                <classification>Platform: Windows 11</classification>
+                <classification>JDK: Temurin 21</classification>
+                <classification>Build Tool: Maven 3.x</classification>
+              </classifications>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
