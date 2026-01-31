@@ -1,77 +1,114 @@
-# 🧪 Cucumber Login Demo
-A basic BDD automation framework built with **Java**, **Cucumber**, **JUnit 4**, and **Maven**.  
-This project demonstrates how to automate a simple login feature using readable **Gherkin** syntax.
+# 🧪 Cucumber Login Automation Framework
+
+A Behaviour-Driven Development (BDD) test automation framework built with **Java**, **Cucumber**, **JUnit 4**, and **Maven**.  
+This project demonstrates automated testing of **login**, **logout**, and **invalid login** scenarios using readable **Gherkin** syntax.
 
 ---
 
-## 📋 Overview
-This project shows how to:
-- Write test scenarios in **Gherkin** (`.feature` files)
-- Implement step definitions in **Java**
-- Run the tests using **JUnit 4** and **Maven**
-- Generate standard **Cucumber HTML** reports
+## 🚀 Project Overview
+
+This framework showcases:
+
+✔ Writing test scenarios in **Gherkin**  
+✔ Implementing step definitions in **Java**  
+✔ Running tests with **JUnit 4 + Maven**  
+✔ Handling **positive and negative test cases**  
+✔ Generating **Cucumber HTML reports**  
+✔ Version control using **Git & GitHub**
 
 ---
 
-## 🛠 Tech Stack
+## 🧰 Tech Stack
+
 | Category | Tool / Version |
-|-----------|----------------|
+|----------|----------------|
 | Language | Java 21 |
-| Test Framework | Cucumber 7.15.0 |
+| BDD Framework | Cucumber 7.15.0 |
 | Test Runner | JUnit 4.13.2 |
 | Build Tool | Maven 3.x |
-| IDE | Eclipse IDE |
+| IDE | Eclipse |
 | OS | Windows 11 |
 
 ---
 
-## ⚙️ Project Structure
+## 📂 Project Structure
+
 ```
 CucumberLoginDemo
- ├── src
- │   ├── main/java
- │   └── test/java
- │       ├── runners/
- │       │   └── TestRunner.java
- │       └── stepDefinitions/
- │           └── LoginSteps.java
- │
- ├── src/test/resources/features/
- │       └── login.feature
- │
- ├── pom.xml
- └── target/cucumber-reports/
+├── src
+│   ├── test
+│   │   ├── java
+│   │   │   ├── runners
+│   │   │   │   └── TestRunner.java
+│   │   │   └── stepDefinitions
+│   │   │       ├── LoginSteps.java
+│   │   │       ├── LogoutSteps.java
+│   │   │       └── InvalidLoginSteps.java
+│   │   └── resources
+│   │       └── features
+│   │           ├── login.feature
+│   │           ├── logout.feature
+│   │           └── invalid_login.feature
+├── pom.xml
+└── target/ (ignored in Git)
 ```
 
 ---
 
-## ▶️ How to Run Tests
-Run the following command from the project root:
+## ▶️ How to Run the Tests
+
+From the project root:
+
 ```bash
 mvn clean test
 ```
 
-When complete, open the report:
+---
+
+## 📊 Test Coverage
+
+### ✅ Positive Scenarios
+- Successful login
+- Successful logout
+
+### ❌ Negative Scenarios
+- Login with invalid username
+- Login with invalid password
+- Login with blank credentials
+
+---
+
+## 📄 Reports
+
+After execution, open:
+
 ```
 target/cucumber-reports/cucumber-report.html
 ```
 
 ---
 
-## 🧾 Example Scenario
-```gherkin
-Feature: Login functionality
+## 🔧 What This Framework Demonstrates
 
-  Scenario: Successful login with valid credentials
-    Given the user is on the login page
-    When the user enters valid username and password
-    And clicks the login button
-    Then the user should be redirected to the homepage
-```
+- BDD implementation using Cucumber
+- Step definition mapping in Java
+- Separation of features and steps
+- Test execution via Maven
+- Handling Git workflow and repository management
 
 ---
 
-## 📚 Next Steps
-- Add additional features and step definitions  
-- Integrate Selenium WebDriver for browser automation  
-- Add GitHub Actions for automated test execution
+## 📈 Future Improvements
+
+- Integrate Selenium WebDriver
+- Implement Page Object Model (POM)
+- Add GitHub Actions CI pipeline
+- Tag tests (smoke / regression)
+- Headless test execution
+
+---
+
+## 👨‍💻 Author
+
+Christopher Williams  
+Senior QA Analyst | Automation & API Testing  
