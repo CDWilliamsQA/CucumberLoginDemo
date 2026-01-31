@@ -4,12 +4,14 @@
 .settings/
 
 #Mavern build
-target /
+target/
+*jar
+*.class
 
 #Logs
 *.log
 
-#Reports
+# Cucumber / test reports
 cucumber-reports/
 advanced-reports/
 
